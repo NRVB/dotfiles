@@ -4,7 +4,7 @@
 ###############################################################################
 echo "Setting up iTerm2 preferences..."
 echo "Setting settings directory to $HOME/.dotfiles/iterm"
-PREFS_DIR="$HOME/.dotfiles/iterm"
+PREFS_DIR="$HOME/dotfiles/iterm"
 
 echo "Set iTerm2 to use the custom preferences directory..."
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true

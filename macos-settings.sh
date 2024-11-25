@@ -4,7 +4,8 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 echo "Applying macOS settings..."
-
+# Ask for the administrator password upfront
+sudo -v
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -41,6 +42,11 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 # Finder                                                                      #
 ###############################################################################
 
+echo "Setting default path to Home"
+defaults write com.apple.finder NewWindowTarget PfHm
+
+echo "Allow quitting finder with cmd + Q"
+defaults write com.apple.finder QuitMenuItem -bool true
 
 echo "Showing hidden files by default..."
 defaults write com.apple.finder AppleShowAllFiles -bool true

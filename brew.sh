@@ -1,5 +1,4 @@
-#!/usr/bin/env zsh
-
+#!/usr/bin/env bash
 ###############################################################################
 # Brew formula, cask and apps from appstore installation                                                          #
 ###############################################################################
@@ -15,19 +14,18 @@ if ! command -v brew &>/dev/null; then
     echo "Homebrew not installed. Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    # Configure Homebrew in PATH for current session
-    if [ -x "/opt/homebrew/bin/brew" ]; then
-        # For Apple Silicon Macs
-        echo "Configuring Homebrew in PATH for Apple Silicon Mac..."
-        export PATH="/opt/homebrew/bin:$PATH"
-    elif [ -x "/usr/local/bin/brew" ]; then
-        # For Intel Macs
-        echo "Configuring Homebrew in PATH for Intel Mac..."
-        export PATH="/usr/local/bin:$PATH"
-    fi
+    # Configure Homebrew in PATH for current and future sessions
+    echo "Configuring Homebrew in PATH for current and future sessions..."
+
+    # Add brew to the PATH for future sessions
+    echo 'eval "$(brew shellenv)"' >> "$HOME/.zprofile"
+
+    # Add brew to the PATH for the current session
+    eval "$(brew shellenv)"
 else
     echo "Homebrew is already installed."
 fi
+
 
 # Verify brew is now accessible
 if ! command -v brew &>/dev/null; then

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 ###############################################################################
 # Iterm2 settup script                                                            #
 ###############################################################################
@@ -14,7 +14,7 @@ echo "set iTerm2 to save changes to the custom folder..."
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile_selection -int 2
 
-echo "Kill iTerm2 to apply changes..." 
+echo "Kill iTerm2 to apply changes..."
 killall iTerm2 2>/dev/null
 
 echo "iTerm2 preferences configured to load from $PREFS_DIR"

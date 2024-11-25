@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Exit the script immediately if any command fails
 set -euo pipefail
 
@@ -12,7 +11,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Array of script filenames in the desired execution order
 SCRIPTS=(
     "macos-settings.sh"
-     "brew.sh"
+    "oh-my-zsh-install.sh"
+    "brew.sh"
     "folders-setup.sh"
     "iterm.sh"
     "set-default-apps.sh"
@@ -36,11 +36,10 @@ execute_script() {
     echo "----------------------------------------"
     echo "Running $(basename "$script_path")..."
     echo "----------------------------------------"
-    "$script_path"
+    source "$script_path"
     echo "Completed: $(basename "$script_path")"
     echo ""
 }
-
 
 echo "========================================"
 echo "Starting Master Setup Script for macOS"

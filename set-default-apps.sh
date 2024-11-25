@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/local/bin/bash
 ###############################################################################
 # Script for setting default apps to open file extensions with
 # This script needs to be runned after the brew.sh script
@@ -12,7 +11,7 @@ command_exists() {
     command -v "$1" &> /dev/null
 }
 
-# Ensure Homebrew is installed 
+# Ensure Homebrew is installed
 if ! command_exists brew; then
     echo "Homebrew is not installed. Please install Homebrew before running this script."
     exit 1
@@ -37,8 +36,9 @@ IINA_BUNDLE_ID=$(osascript -e 'id of app "IINA"')
 
 # Check if applications are installed
 for app in Zed Keka IINA; do
-    BUNDLE_ID_VAR="${app^^}_BUNDLE_ID"  
-    BUNDLE_ID=${!BUNDLE_ID_VAR}       
+app_uppercase=$(echo "$app" | tr '[:lower:]' '[:upper:]')
+BUNDLE_ID_VAR="${app_uppercase}_BUNDLE_ID"
+BUNDLE_ID=${!BUNDLE_ID_VAR}
 
     if [ -z "$BUNDLE_ID" ]; then
         echo "$app is not installed. Please install it and run this script again."
@@ -52,10 +52,10 @@ cat <<EOF > default_apps.duti
 public.plain-text $ZED_BUNDLE_ID
 public.text $ZED_BUNDLE_ID
 public.source-code $ZED_BUNDLE_ID
+public.data $ZED_BUNDLE_ID
 net.daringfireball.markdown $ZED_BUNDLE_ID
 py $ZED_BUNDLE_ID
 js $ZED_BUNDLE_ID
-html $ZED_BUNDLE_ID
 css $ZED_BUNDLE_ID
 json $ZED_BUNDLE_ID
 jsonc $ZED_BUNDLE_ID
@@ -108,11 +108,9 @@ makefile $ZED_BUNDLE_ID
 GNUmakefile $ZED_BUNDLE_ID
 
 # Keka associations
-public.compressed-archive $KEKA_BUNDLE_ID
 public.archive $KEKA_BUNDLE_ID
 public.zip-archive $KEKA_BUNDLE_ID
 public.tar-archive $KEKA_BUNDLE_ID
-public.gzip-archive $KEKA_BUNDLE_ID
 public.bzip2-archive $KEKA_BUNDLE_ID
 7z $KEKA_BUNDLE_ID
 rar $KEKA_BUNDLE_ID
@@ -120,11 +118,8 @@ xz $KEKA_BUNDLE_ID
 cab $KEKA_BUNDLE_ID
 iso $KEKA_BUNDLE_ID
 tgz $KEKA_BUNDLE_ID
-tar.gz $KEKA_BUNDLE_ID
 tbz2 $KEKA_BUNDLE_ID
-tar.bz2 $KEKA_BUNDLE_ID
 txz $KEKA_BUNDLE_ID
-tar.xz $KEKA_BUNDLE_ID
 lzh $KEKA_BUNDLE_ID
 lha $KEKA_BUNDLE_ID
 sit $KEKA_BUNDLE_ID

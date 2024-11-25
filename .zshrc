@@ -5,8 +5,9 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"  # You can change this to your preferred theme
 
 # Oh-My-Zsh plugins
-plugins=(macos xcode git-branches)
+plugins=(macos xcode)
 
+# Initialize Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
 # Zinit installation and setup
@@ -36,10 +37,12 @@ export LC_ALL=sv_SE.UTF-8
 
 # Zinit plugins
 zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-syntax-highlighting
 zinit light MichaelAquilina/zsh-you-should-use
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
+
+# fzf-tab plugin (load after compinit)
+zinit light Aloxaf/fzf-tab
 
 # Keyboard shortcut for autosuggest accept
 bindkey '^o' autosuggest-accept
@@ -69,11 +72,10 @@ alias glg='git log'
 alias gcob='git checkout -b'
 
 # Utility aliases
-
 alias lc='eza --icons=always --color=always --color-scale-mode=gradient -a'
 alias lcl='eza --icons=always --color=always --color-scale-mode=gradient --long -a'
-alias lcd='eza --icons=always --color=always --color-scale-mode=gradient --only-dirs  --long -a'
-alias lcf='eza --icons=always --color=always --color-scale-mode=gradient --only-files  --long -a'
+alias lcd='eza --icons=always --color=always --color-scale-mode=gradient --only-dirs --long -a'
+alias lcf='eza --icons=always --color=always --color-scale-mode=gradient --only-files --long -a'
 alias lct='eza --icons=always --color=always --color-scale-mode=gradient --long --only-dirs --tree --hyperlink --header -a'
 alias lctf='eza --icons=always --color=always --color-scale-mode=gradient --tree -a'
 alias edzsh='sudo zed ~/.zshrc'
@@ -123,14 +125,8 @@ zoxide_interactive() {
   fi
 }
 
-# fzf-tab
-zinit light Aloxaf/fzf-tab
-
 # 1Password SSH agent
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-
-# Final rbenv initialization
-eval "$(rbenv init -)"
 
 # Oh-My-Posh
 eval "$(oh-my-posh init zsh --config '~/dotfiles/.mytheme2.omp.json')"

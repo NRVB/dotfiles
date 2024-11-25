@@ -1,0 +1,19 @@
+[user]
+  signingkey = YOUR_SSH_SIGNING_KEY
+    email = YOUR_EMAIL
+      name = YOUR_NAME
+      [gpg]
+        format = ssh
+	[gpg "ssh"]
+	  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	  [commit]
+	    gpgsign = true
+	    [filter "lfs"]
+	      clean = git-lfs clean -- %f
+	        smudge = git-lfs smudge -- %f
+		  process = git-lfs filter-process
+		    required = true
+		    [mergetool]
+		      keepBackup = true
+		      [core]
+		        excludesfile = ~/.gitignore_global

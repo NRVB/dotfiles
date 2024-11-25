@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>build</key>
+	<string>2238</string>
+	<key>preferences</key>
+	<dict>
+		<key>Combined.Menubar.Items</key>
+		<array/>
+		<key>Device.Auth-Identifier</key>
+		<string>2B526241-28BD-474D-BC58-850DD6B7BAF7</string>
+		<key>Device.Device</key>
+		<string>aab43c41acbb30c5bb1584e18c3cac9a802d024e</string>
+		<key>Device.Model</key>
+		<string>Mac14,7</string>
+		<key>License.License</key>
+		<string>push-heel-eddy-stub-3172-7</string>
+		<key>License.Validation.hashversion</key>
+		<string>3</string>
+		<key>License.Validation.license</key>
+		<string>push-heel-eddy-stub-3172-7</string>
+		<key>License.Validation.signature</key>
+		<string>MIGGAkFFHgqT85MnUNKgweXcuxOdu99kdz71D1wnBFkWhRulPAChOMSqbHKFwb0kxxY35TgVv27VcUp0QYlaxC0SjWYijQJBN/gaet1+SnN1QFRseWVNKIREiWRP6zTAAzja/iCjXm9xW80kMSSj7t8RTivBN7zrmXjo/ENczAJRUNFtR528yRM=</string>
+		<key>License.Validation.time</key>
+		<string>1731333840</string>
+		<key>Menu.Theme.Dark</key>
+		<string>navy</string>
+		<key>Menubar.Global.ReducePadding</key>
+		<integer>0</integer>
+		<key>Menubar.Style</key>
+		<integer>1</integer>
+		<key>Menubar.Theme.Dark</key>
+		<string>custom</string>
+		<key>Migration.CombinedPowerItems</key>
+		<true/>
+		<key>Migration.Profiles</key>
+		<true/>
+		<key>Profiles.Available.identifier</key>
+		<string>default</string>
+		<key>Profiles.Settings.default.Combined.Menubar.Items</key>
+		<array/>
+		<key>Profiles.Settings.default.Disks.Menubar.Enabled</key>
+		<integer>0</integer>
+		<key>Profiles.Settings.default.Time.Menubar.Enabled</key>
+		<integer>1</integer>
+		<key>Profiles.Settings.default.Weather.Menubar.Enabled</key>
+		<integer>1</integer>
+		<key>Sensors.Global.DetailLevel</key>
+		<integer>1</integer>
+		<key>Sensors.Global.Fans.Manual.all</key>
+		<real>1</real>
+		<key>Sensors.Global.Fans.Mode</key>
+		<integer>0</integer>
+		<key>Status.Build.Last</key>
+		<real>2238</real>
+		<key>Status.Version.Last</key>
+		<real>7.0199999809265137</real>
+		<key>Weather.Global.AvailableProviders</key>
+		<array>
+			<dict>
+				<key>key</key>
+				<string>apple</string>
+				<key>name</key>
+				<string>🌍 Apple Weather</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>accuweather</string>
+				<key>name</key>
+				<string>🌍 AccuWeather</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>aeris</string>
+				<key>name</key>
+				<string>🌍 Xweather (formerly Aeris)</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>apple</string>
+				<key>name</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>environmentcanada</string>
+				<key>name</key>
+				<string>🇨🇦 Environment Canada</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>willyweather</string>
+				<key>name</key>
+				<string>🇦🇺 WillyWeather (BoM)</string>
+			</dict>
+		</array>
+	</dict>
+	<key>version</key>
+	<string>7</string>
+</dict>
+</plist>

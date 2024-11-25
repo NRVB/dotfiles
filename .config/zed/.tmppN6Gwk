@@ -1,0 +1,6 @@
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Setting","setting":"theme","value":"One Dark"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Setting","setting":"keymap","value":"VSCode"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"App","operation":"open"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Editor","operation":"open","file_extension":null,"vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":356633,"type":"Memory","memory_in_bytes":224985088,"virtual_memory_in_bytes":424231075840}
+{"signed_in":false,"milliseconds_since_first_event":356633,"type":"Cpu","usage_as_percentage":0.79221904,"core_count":8}

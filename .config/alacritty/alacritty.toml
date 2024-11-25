@@ -1,0 +1,53 @@
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Alt"
+
+[general]
+import = ["/Users/niclasbjuhr/.config/alacritty/themes/gruvbox_material_medium_dark.toml"]
+live_config_reload = true
+[cursor.style]
+blinking = "On"
+
+[font]
+size = 13.0
+[font.italic]
+family = "CommitMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold]
+family = "CommitMono Nerd Font Mono"
+style = "Bold"
+
+
+[font.normal]
+family = "CommitMono Nerd Font Mono"
+style = "Regular"
+
+[window]
+decorations = "buttonless"
+opacity = 0.7
+blur = true
+decorations_theme_variant = "Dark"
+
+[window.padding]
+x = 10
+y = 10
+
+[keyboard]
+
+
+[selection]
+
+save_to_clipboard = true

@@ -1,0 +1,108 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "show_inline_completions": true,
+  "languages": {
+    "Dart": {
+      "show_inline_completions": false
+    },
+    "Python": {
+      "show_inline_completions": true
+    },
+    "C": {
+      "show_inline_completions": true
+    }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "theme": "Gruvbox Dark Soft",
+  "vim_mode": false,
+  "ui_font_size": 16,
+  "buffer_font_size": 13,
+  "buffer_font_family": "CommitMono Nerd Font Mono",
+
+  "experimental.theme_overrides": {
+    "syntax": {
+      // Existing styles
+      "function": {
+        "font_style": "italic"
+      },
+      "comment": {
+        "font_style": "italic"
+      },
+      "type": {
+        "font_style": "italic"
+      },
+      "punctuation.bracket": {
+        "font_style": "italic"
+      },
+      "string": {
+        "font_style": "italic"
+      },
+      "attribute": {
+        "font_style": "italic"
+      },
+
+      "boolean": { "font_style": "italic" },
+      "comment.doc": { "font_style": "italic" },
+      "constant": { "font_style": "italic" },
+      "constructor": { "font_style": "italic" },
+      "embedded": { "font_style": "italic" },
+      "emphasis": { "font_style": "italic" },
+      "emphasis.strong": { "font_style": "italic" },
+      "enum": { "font_style": "italic" },
+      "hint": { "font_style": "italic" },
+      "keyword": { "font_style": "italic" },
+      "label": { "font_style": "italic" },
+      "link_text": { "font_style": "italic" },
+      "link_uri": { "font_style": "italic" },
+      "number": { "font_style": "italic" },
+      "operator": { "font_style": "italic" },
+      "predictive": { "font_style": "italic" },
+      "preproc": { "font_style": "italic" },
+      "primary": { "font_style": "italic" },
+      "property": { "font_style": "italic" },
+      "punctuation": { "font_style": "italic" },
+      "punctuation.delimiter": { "font_style": "italic" },
+      "punctuation.list_marker": { "font_style": "italic" },
+      "punctuation.special": { "font_style": "italic" },
+      "string.escape": { "font_style": "italic" },
+      "string.regex": { "font_style": "italic" },
+      "string.special": { "font_style": "italic" },
+      "string.special.symbol": { "font_style": "italic" },
+      "tag": { "font_style": "italic" },
+      "text.literal": { "font_style": "italic" },
+      "title": { "font_style": "italic" },
+      "variable": { "font_style": "italic" },
+      "variable.special": { "font_style": "italic" },
+      "variant": { "font_style": "italic" }
+    }
+  },
+
+  "autosave": "on_focus_change",
+  "autosave_delay": 1500,
+  "autosave_on_focus_change": true,
+  "autosave_on_window_change": true,
+  "autosave_on_build": true,
+  "autosave_on_build_delay": 1500,
+  "autosave_on_build_events": ["build", "run", "debug"],
+  "autosave_on_build_events_delay": 1500,
+  "show_copilot_suggestions": true,
+  "inlay_hints": {
+    "enabled": true,
+    "typeHints": true,
+    "parameterHints": true,
+    "chainingHints": true
+  }
+}

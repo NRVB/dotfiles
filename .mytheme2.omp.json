@@ -1,0 +1,173 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "transient_prompt": {
+    "template": "➜ ",
+    "foreground": "#458588",
+    "background": "transparent"
+  },
+  "palette": {
+    "gruv_dark0_hard": "#1d2021",
+    "gruv_dark0": "#282828",
+    "gruv_dark0_soft": "#32302f",
+    "gruv_dark1": "#3c3836",
+    "gruv_dark2": "#504945",
+    "gruv_dark3": "#665c54",
+    "gruv_dark4": "#7c6f64",
+    "gruv_light0_hard": "#f9f5d7",
+    "gruv_light0": "#fbf1c7",
+    "gruv_light0_soft": "#f2e5bc",
+    "gruv_light1": "#ebdbb2",
+    "gruv_light2": "#d5c4a1",
+    "gruv_light3": "#bdae93",
+    "gruv_light4": "#a89984",
+    "gruv_bright_red": "#fb4934",
+    "gruv_bright_green": "#b8bb26",
+    "gruv_bright_yellow": "#fabd2f",
+    "gruv_bright_blue": "#83a598",
+    "gruv_bright_purple": "#d3869b",
+    "gruv_bright_aqua": "#8ec07c",
+    "gruv_bright_orange": "#fe8019",
+    "gruv_neutral_red": "#cc241d",
+    "gruv_neutral_green": "#98971a",
+    "gruv_neutral_yellow": "#d79921",
+    "gruv_neutral_blue": "#458588",
+    "gruv_neutral_purple": "#b16286",
+    "gruv_neutral_aqua": "#689d6a",
+    "gruv_neutral_orange": "#d65d0e",
+    "gruv_fg": "#ebdbb2",
+    "gruv_bg": "#282828"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "#458588",
+          "properties": {
+            "style": "folder"
+          },
+          "template": "{{ .Path }}"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "properties": {
+            "branch_icon": "",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "template": " <p:gruv_fg>{{ if .UpstreamIcon }}{{ .UpstreamIcon }}{{ else }}git{{ end }}</><p:gruv_fg>(</><p:gruv_neutral_purple>{{ .HEAD }}</><p:gruv_fg>)</>{{ if and (not .Working.Changed) (not .Staging.Changed) (eq .Ahead 0) (eq .Behind 0) (eq .StashCount 0) }} <p:gruv_bright_green>\uf00c</>{{ else }}{{ if .BranchStatus }}{{ end }}{{ if .Working.Changed }} <p:gruv_neutral_red>!{{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}<p:gruv_fg> |</>{{ end }}{{ if .Staging.Changed }} <p:gruv_bright_green>+{{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <p:gruv_bright_blue>${{ .StashCount }}</>{{ end }}{{ if gt .Behind 0 }} <p:gruv_bright_purple><{{ .Behind }}</>{{ end }}{{ if gt .Ahead 0 }} <p:gruv_bright_purple>>{{ .Ahead }}</>{{ end }}{{ end }}"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}\uf487 {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ if or .Version .Name }} | {{ end }}{{ end }}",
+          "foreground": "#ffeb3b",
+          "type": "project",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "display_mode": "context",
+            "fetch_version": true
+          },
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}\ue755 {{ .Full }} | {{ end }}",
+          "foreground": "#f6553c",
+          "type": "swift",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "display_mode": "context",
+            "fetch_version": true
+          },
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}\ue7a8 {{ .Full }} | {{ end }}",
+          "foreground": "#99908a",
+          "type": "rust",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "display_mode": "context",
+            "fetch_version": true,
+            "fetch_virtual_env": true
+          },
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}\ue73c {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} | {{ end }}",
+          "foreground": "#906cff",
+          "type": "python",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "display_mode": "context",
+            "fetch_version": true
+          },
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}\ue738 {{ .Full }} | {{ end }}",
+          "foreground": "#4063D8",
+          "type": "java",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "display_mode": "context",
+            "fetch_version": true
+          },
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}\ue798 {{ .Full }} | {{ end }}",
+          "foreground": "#06A4CE",
+          "type": "dart",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "display_mode": "context",
+            "fetch_version": true
+          },
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}\ue28e {{ .Full }} | {{ end }}",
+          "foreground": "#06A4CE",
+          "type": "flutter",
+          "style": "plain"
+        },
+        {
+          "template": "{{ if not .Error }}{{ .Percentage }}% {{ if eq .State.String \"Charging\" }}\uf1e6{{ else }}{{ if lt .Percentage 20 }}\uf244{{ else if lt .Percentage 40 }}\uf243{{ else if lt .Percentage 60 }}\uf242{{ else if lt .Percentage 80 }}\uf241{{ else }}\uf240{{ end }}{{ end }}{{ end }}",
+          "foreground": "#98c379",
+          "type": "battery",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "time_format": "15:04"
+          },
+          "template": "  | {{ .CurrentDate | date .Format }}",
+          "foreground": "#e5c07b",
+          "type": "time",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "template": "➜",
+          "foreground": "#458588",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 3,
+  "final_space": true
+}

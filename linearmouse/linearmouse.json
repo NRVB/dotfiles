@@ -1,0 +1,103 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
+  "schemes" : [
+    {
+      "buttons" : {
+        "mappings" : [
+          {
+            "button" : 5,
+            "option" : false,
+            "shift" : false,
+            "control" : false,
+            "action" : "missionControl",
+            "command" : false
+          }
+        ],
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "vendorID" : "0x46d",
+          "serialNumber" : "7973AD32",
+          "productID" : "0xb034",
+          "productName" : "MX Master 3S"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        },
+        "distance" : "36px",
+        "acceleration" : 1,
+        "speed" : 0,
+        "modifiers" : {
+          "horizontal" : {
+            "command" : {
+              "type" : "preventDefault"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productName" : "MX Master 3S Space grey",
+          "vendorID" : "0x46d",
+          "serialNumber" : "3989B675",
+          "productID" : "0xb034"
+        }
+      },
+      "scrolling" : {
+        "reverse" : true,
+        "distance" : {
+          "vertical" : 3
+        },
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "modifiers" : {
+          "vertical" : {
+            "command" : {
+              "type" : "pinchZoom"
+            }
+          }
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      },
+      "buttons" : {
+        "mappings" : [
+          {
+            "shift" : false,
+            "control" : false,
+            "action" : "mouse.button.back",
+            "button" : 3,
+            "option" : false,
+            "command" : false
+          },
+          {
+            "shift" : false,
+            "command" : false,
+            "button" : 4,
+            "control" : false,
+            "action" : "mouse.button.forward",
+            "option" : false
+          },
+          {
+            "option" : false,
+            "action" : "launchpad",
+            "button" : 5,
+            "command" : false,
+            "shift" : false,
+            "control" : false
+          }
+        ],
+        "universalBackForward" : true
+      }
+    }
+  ]
+}

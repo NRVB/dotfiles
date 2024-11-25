@@ -135,7 +135,7 @@ echo "Disable automatic capitalization.."
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 echo "Set a blazingly fast keyboard repeat rate..."
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 ###############################################################################
 # Finder                                                                      #

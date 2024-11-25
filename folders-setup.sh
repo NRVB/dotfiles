@@ -8,7 +8,7 @@
 default_folders=(
     "$HOME/Projects"
     "$HOME/Printscreens"
-    # For stuff like Flutter SDK
+    # For stuff litke flutter sdk
     "$HOME/Development assets"
 
 )
@@ -16,25 +16,22 @@ default_folders=(
 create_folders() {
     for folder in "${default_folders[@]}"; do
         if [ -d "$folder" ]; then
-            echo "Directory already exists: $folder. Skipping..."
+            echo "Directory already exists: $folder. Skipping..." | tee -a "$FOLDER_LOG_FILE"
         else
             mkdir -p "$folder" && \
-                echo "Created directory: $folder" || \
-                echo "Failed to create directory: $folder"
+                echo "Created directory: $folder" | tee -a "$FOLDER_LOG_FILE" || \
+                echo "Failed to create directory: $folder" | tee -a "$FOLDER_LOG_FILE"
         fi
     done
 }
 
-echo "Starting to create default folders..."
+decho "Starting to create default folders..." | tee -a "$FOLDER_LOG_FILE"
 create_folders
-echo "Default folders creation process completed."
+echo "Default folders creation process completed." | tee -a "$FOLDER_LOG_FILE"
 
 ###############################################################################
-# Script for setting up symlinks for dotfiles/.config and .zshrc to home directory
+# Script for setup symlink for dotfiles/.config and zshrc to home directory   #
 ###############################################################################
-
-# Set the URL of your dotfiles repository
-DOTFILES_REPO_URL="https://github.com/yourusername/dotfiles.git"  # Replace with your actual repo URL
 
 DOTFILES_DIR="$HOME/dotfiles"
 TARGET_CONFIG="$HOME/.config"
@@ -51,8 +48,8 @@ create_symlink() {
     if [ -L "$target" ]; then
         echo "Symlink already exists: $target -> $(readlink $target)"
     elif [ -e "$target" ]; then
-        echo "Existing file or directory found at $target. Backing up to ${target}.backup"
-        mv "$target" "${target}.backup"
+        echo "Existing file or directory found at $target. Backing up to $target.backup"
+        mv "$target" "$target.backup"
         ln -s "$source" "$target"
         echo "Symlink created: $target -> $source"
     else
@@ -61,29 +58,12 @@ create_symlink() {
     fi
 }
 
-# Check if Git is installed
-if ! command -v git >/dev/null 2>&1; then
-    echo "Git is not installed. Please install Git before running this script."
+# Ensure dotfiles directory exists
+if [ ! -d "$DOTFILES_DIR" ]; then
+    echo "Dotfiles directory does not exist: $DOTFILES_DIR"
     exit 1
 fi
 
-# Clone dotfiles repository if it doesn't exist
-if [ ! -d "$DOTFILES_DIR" ]; then
-    echo "Dotfiles directory does not exist: $DOTFILES_DIR"
-    echo "Cloning dotfiles repository from $DOTFILES_REPO_URL into $DOTFILES_DIR..."
-    git clone "$DOTFILES_REPO_URL" "$DOTFILES_DIR" || {
-        echo "Error cloning dotfiles repository. Exiting."
-        exit 1
-    }
-else
-    # If the directory exists, update it
-    echo "Dotfiles directory exists. Pulling latest changes..."
-    cd "$DOTFILES_DIR"
-    git pull --rebase
-    cd -
-fi
-
-# Ensure source .config directory exists
 if [ ! -d "$SOURCE_CONFIG" ]; then
     echo "Source .config directory does not exist: $SOURCE_CONFIG"
     mkdir -p "$SOURCE_CONFIG"

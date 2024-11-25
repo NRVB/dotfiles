@@ -25,9 +25,18 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 echo "Disable automatic capitalization.."
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
 echo "Set a blazingly fast keyboard repeat rate..."
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+
+# Set sidebar icon size to medium
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
@@ -154,6 +163,9 @@ killall Finder
 
 echo "Enabling auto-hide for the Dock..."
 defaults write com.apple.dock autohide -bool true
+
+# Set the icon size of Dock items to 16 pixels (smallest size)
+defaults write com.apple.dock tilesize -int 16
 
 echo "Setting Dock position to the left side..."
 defaults write com.apple.dock orientation -string left

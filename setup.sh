@@ -11,8 +11,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Array of script filenames in the desired execution order
 SCRIPTS=(
 "xcode-cli-setup.sh"
-"brew.sh"
 "oh-my-zsh-install.sh"
+"brew.sh"
 "iterm.sh"
 "set-default-apps.sh"
 "setup-xcode.sh"

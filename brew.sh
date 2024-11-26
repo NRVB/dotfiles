@@ -72,8 +72,7 @@ packages=(
     "neofetch"
     "neovim"
     "node"
-    "oh-my-posh"
-    "oh-my-zsh"
+    "jandedobbeleer/oh-my-posh/oh-my-posh"
     "prettierd"
     "python"
     "rbenv"
@@ -117,7 +116,6 @@ casks=(
     "command-x"
     "dash"
     "flux"
-    "garmin-express"
     "github-copilot-for-xcode"
     "hyperkey"
     "insomnia"
@@ -137,7 +135,7 @@ casks=(
     "postman"
     "shottr"
     "sketch"
-    rectangle-pro
+    "rectangle-pro"
     "spotify"
     "sf-symbols"
     "visual-studio-code"
@@ -248,7 +246,6 @@ else
 fi
 
 echo "Installing Commit Mono Nerd Font..."
-brew tap homebrew/cask-fonts
 brew install --cask font-commit-mono-nerd-font
 
 echo "Script execution completed."

@@ -10,13 +10,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Array of script filenames in the desired execution order
 SCRIPTS=(
+"xcode-cli-setup.sh"
+"brew.sh"
+"oh-my-zsh-install.sh"
+"iterm.sh"
+"set-default-apps.sh"
+"setup-xcode.sh"
+"folders-setup.sh"
     "macos-settings.sh"
-    "oh-my-zsh-install.sh"
-    "brew.sh"
-    "folders-setup.sh"
-    "iterm.sh"
-    "set-default-apps.sh"
-    "setup-xcode.sh"
 )
 
 # Function to set executable permissions on a script
@@ -36,7 +37,7 @@ execute_script() {
     echo "----------------------------------------"
     echo "Running $(basename "$script_path")..."
     echo "----------------------------------------"
-    source "$script_path"
+    bash "$script_path"
     echo "Completed: $(basename "$script_path")"
     echo ""
 }

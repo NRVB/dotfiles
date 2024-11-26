@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-###############################################################################
-# Brew formula, cask and apps from appstore installation                                                          #
-###############################################################################
 
 # Log file to store failed installations
 LOG_FILE="$HOME/install_errors.log"
@@ -14,18 +11,28 @@ if ! command -v brew &>/dev/null; then
     echo "Homebrew not installed. Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    # Configure Homebrew in PATH for current and future sessions
-    echo "Configuring Homebrew in PATH for current and future sessions..."
+    # Determine the brew installation prefix
+    if [ -d "/opt/homebrew/bin" ]; then
+        # Apple Silicon Macs
+        BREW_PREFIX="/opt/homebrew"
+    elif [ -d "/usr/local/bin" ]; then
+        # Intel Macs
+        BREW_PREFIX="/usr/local"
+    else
+        echo "Homebrew installation failed or installed in an unexpected location."
+        exit 1
+    fi
 
-    # Add brew to the PATH for future sessions
-    echo 'eval "$(brew shellenv)"' >> "$HOME/.zprofile"
+    echo "Adding Homebrew to PATH..."
 
     # Add brew to the PATH for the current session
-    eval "$(brew shellenv)"
+    eval "$($BREW_PREFIX/bin/brew shellenv)"
+
+    # Add brew to the PATH for future sessions
+    echo "eval \"\$($BREW_PREFIX/bin/brew shellenv)\"" >> "$HOME/.zprofile"
 else
     echo "Homebrew is already installed."
 fi
-
 
 # Verify brew is now accessible
 if ! command -v brew &>/dev/null; then

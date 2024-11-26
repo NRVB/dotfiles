@@ -31,9 +31,6 @@ export COLORTERM="truecolor"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Language settings
-export LANG=sv_SE.UTF-8
-export LC_ALL=sv_SE.UTF-8
 
 # Zinit plugins
 zinit light zsh-users/zsh-autosuggestions

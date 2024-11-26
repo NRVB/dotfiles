@@ -247,11 +247,9 @@ else
     echo "rbenv" >> "$LOG_FILE"
 fi
 
-# install commit mono nerd font
 echo "Installing Commit Mono Nerd Font..."
+brew tap homebrew/cask-fonts
 brew install --cask font-commit-mono-nerd-font
-
-
 
 echo "Script execution completed."
 

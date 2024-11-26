@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
 ###############################################################################
 # Script for setting default apps to open file extensions with
 # This script needs to be runned after the brew.sh script
@@ -52,7 +52,6 @@ cat <<EOF > default_apps.duti
 public.plain-text $ZED_BUNDLE_ID
 public.text $ZED_BUNDLE_ID
 public.source-code $ZED_BUNDLE_ID
-public.data $ZED_BUNDLE_ID
 net.daringfireball.markdown $ZED_BUNDLE_ID
 py $ZED_BUNDLE_ID
 js $ZED_BUNDLE_ID
